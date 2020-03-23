@@ -13,11 +13,11 @@
 #       end
 #
 #       extend Gem::Deprecate
-#       deprecate :instance_method, "X.z", 2011, 4
+#       deprecate_with_date :instance_method, "X.z", 2011, 4
 #
 #       class << self
 #         extend Gem::Deprecate
-#         deprecate :klass_method, :none, 2011, 4
+#         deprecate_with_date :klass_method, :none, 2011, 4
 #       end
 #     end
 
@@ -47,7 +47,7 @@ module Gem::Deprecate
   # telling the user of +repl+ (unless +repl+ is :none) and the
   # year/month that it is planned to go away.
 
-  def deprecate(name, repl, year, month)
+  def deprecate_with_date(name, repl, year, month)
     class_eval do
       old = "_deprecated_#{name}"
       alias_method old, name
@@ -81,6 +81,6 @@ module Gem::Deprecate
       end
     end
   end
-  module_function :deprecate, :deprecate_command, :skip_during
+  module_function :deprecate_with_date, :deprecate_command, :skip_during
 
 end

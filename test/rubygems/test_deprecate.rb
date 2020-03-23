@@ -54,7 +54,7 @@ class TestDeprecate < Gem::TestCase
     def bar
       @message = "bar"
     end
-    deprecate :foo, :bar, 2099, 3
+    deprecate_with_date :foo, :bar, 2099, 3
 
   end
 

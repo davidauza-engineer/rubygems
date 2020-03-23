@@ -422,7 +422,7 @@ class Gem::Installer
     @gem_dir = directory
     extract_files
   end
-  deprecate :unpack, :none, 2020, 04
+  deprecate_with_date :unpack, :none, 2020, 04
 
   ##
   # The location of the spec file that is installed.
