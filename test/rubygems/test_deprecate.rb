@@ -82,7 +82,7 @@ class TestDeprecate < Gem::TestCase
     foo_command = Class.new(Gem::Command) do
       extend Gem::Deprecate
 
-      deprecate_command(2099, 4)
+      deprecate_command_with_date(2099, 4)
 
       def execute
         puts "pew pew!"
